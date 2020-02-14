@@ -14,6 +14,13 @@
 		5A25AE2923F692C100FB0337 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5A25AE2823F692C100FB0337 /* Assets.xcassets */; };
 		5A25AE2C23F692C100FB0337 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5A25AE2A23F692C100FB0337 /* LaunchScreen.storyboard */; };
 		5A25AE2F23F692C100FB0337 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 5A25AE2E23F692C100FB0337 /* main.m */; };
+		5A25AE3C23F694EB00FB0337 /* K8Keyboard.m in Sources */ = {isa = PBXBuildFile; fileRef = 5A25AE3823F694EB00FB0337 /* K8Keyboard.m */; };
+		5A25AE3D23F694EB00FB0337 /* K8Keyboard.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5A25AE3923F694EB00FB0337 /* K8Keyboard.xib */; };
+		5A25AE3E23F694EB00FB0337 /* K8KeyboardViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5A25AE3B23F694EB00FB0337 /* K8KeyboardViewController.m */; };
+		5A25AE4C23F6A77100FB0337 /* BettingOrderViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5A25AE4923F6A77000FB0337 /* BettingOrderViewController.xib */; };
+		5A25AE4D23F6A77100FB0337 /* BettingOrderViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5A25AE4A23F6A77000FB0337 /* BettingOrderViewController.m */; };
+		5A25AE5023F6A78900FB0337 /* BettingOrderViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 5A25AE4F23F6A78900FB0337 /* BettingOrderViewModel.m */; };
+		5A25AE5323F6A79B00FB0337 /* BettingOrderModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 5A25AE5223F6A79B00FB0337 /* BettingOrderModel.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -29,6 +36,18 @@
 		5A25AE2B23F692C100FB0337 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		5A25AE2D23F692C100FB0337 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		5A25AE2E23F692C100FB0337 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		5A25AE3623F694EB00FB0337 /* K8KeyboardViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = K8KeyboardViewController.h; sourceTree = "<group>"; };
+		5A25AE3823F694EB00FB0337 /* K8Keyboard.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = K8Keyboard.m; sourceTree = "<group>"; };
+		5A25AE3923F694EB00FB0337 /* K8Keyboard.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = K8Keyboard.xib; sourceTree = "<group>"; };
+		5A25AE3A23F694EB00FB0337 /* K8Keyboard.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = K8Keyboard.h; sourceTree = "<group>"; };
+		5A25AE3B23F694EB00FB0337 /* K8KeyboardViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = K8KeyboardViewController.m; sourceTree = "<group>"; };
+		5A25AE4923F6A77000FB0337 /* BettingOrderViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BettingOrderViewController.xib; sourceTree = "<group>"; };
+		5A25AE4A23F6A77000FB0337 /* BettingOrderViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BettingOrderViewController.m; sourceTree = "<group>"; };
+		5A25AE4B23F6A77000FB0337 /* BettingOrderViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BettingOrderViewController.h; sourceTree = "<group>"; };
+		5A25AE4E23F6A78900FB0337 /* BettingOrderViewModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BettingOrderViewModel.h; sourceTree = "<group>"; };
+		5A25AE4F23F6A78900FB0337 /* BettingOrderViewModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BettingOrderViewModel.m; sourceTree = "<group>"; };
+		5A25AE5123F6A79B00FB0337 /* BettingOrderModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BettingOrderModel.h; sourceTree = "<group>"; };
+		5A25AE5223F6A79B00FB0337 /* BettingOrderModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BettingOrderModel.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -67,6 +86,8 @@
 				5A25AE2023F692BF00FB0337 /* SceneDelegate.m */,
 				5A25AE2223F692BF00FB0337 /* ViewController.h */,
 				5A25AE2323F692BF00FB0337 /* ViewController.m */,
+				5A25AE4823F6A77000FB0337 /* BettingOrderViewController */,
+				5A25AE3523F694EB00FB0337 /* K8KeyboardViewController */,
 				5A25AE2523F692BF00FB0337 /* Main.storyboard */,
 				5A25AE2823F692C100FB0337 /* Assets.xcassets */,
 				5A25AE2A23F692C100FB0337 /* LaunchScreen.storyboard */,
@@ -74,6 +95,40 @@
 				5A25AE2E23F692C100FB0337 /* main.m */,
 			);
 			path = BetKeyboard;
+			sourceTree = "<group>";
+		};
+		5A25AE3523F694EB00FB0337 /* K8KeyboardViewController */ = {
+			isa = PBXGroup;
+			children = (
+				5A25AE3623F694EB00FB0337 /* K8KeyboardViewController.h */,
+				5A25AE3B23F694EB00FB0337 /* K8KeyboardViewController.m */,
+				5A25AE3723F694EB00FB0337 /* K8Keyboard */,
+			);
+			path = K8KeyboardViewController;
+			sourceTree = "<group>";
+		};
+		5A25AE3723F694EB00FB0337 /* K8Keyboard */ = {
+			isa = PBXGroup;
+			children = (
+				5A25AE3823F694EB00FB0337 /* K8Keyboard.m */,
+				5A25AE3923F694EB00FB0337 /* K8Keyboard.xib */,
+				5A25AE3A23F694EB00FB0337 /* K8Keyboard.h */,
+			);
+			path = K8Keyboard;
+			sourceTree = "<group>";
+		};
+		5A25AE4823F6A77000FB0337 /* BettingOrderViewController */ = {
+			isa = PBXGroup;
+			children = (
+				5A25AE4923F6A77000FB0337 /* BettingOrderViewController.xib */,
+				5A25AE4A23F6A77000FB0337 /* BettingOrderViewController.m */,
+				5A25AE4B23F6A77000FB0337 /* BettingOrderViewController.h */,
+				5A25AE4E23F6A78900FB0337 /* BettingOrderViewModel.h */,
+				5A25AE4F23F6A78900FB0337 /* BettingOrderViewModel.m */,
+				5A25AE5123F6A79B00FB0337 /* BettingOrderModel.h */,
+				5A25AE5223F6A79B00FB0337 /* BettingOrderModel.m */,
+			);
+			path = BettingOrderViewController;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -133,9 +188,11 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5A25AE4C23F6A77100FB0337 /* BettingOrderViewController.xib in Resources */,
 				5A25AE2C23F692C100FB0337 /* LaunchScreen.storyboard in Resources */,
 				5A25AE2923F692C100FB0337 /* Assets.xcassets in Resources */,
 				5A25AE2723F692BF00FB0337 /* Main.storyboard in Resources */,
+				5A25AE3D23F694EB00FB0337 /* K8Keyboard.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -146,10 +203,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5A25AE3E23F694EB00FB0337 /* K8KeyboardViewController.m in Sources */,
 				5A25AE2423F692BF00FB0337 /* ViewController.m in Sources */,
 				5A25AE1E23F692BF00FB0337 /* AppDelegate.m in Sources */,
+				5A25AE3C23F694EB00FB0337 /* K8Keyboard.m in Sources */,
+				5A25AE4D23F6A77100FB0337 /* BettingOrderViewController.m in Sources */,
 				5A25AE2F23F692C100FB0337 /* main.m in Sources */,
 				5A25AE2123F692BF00FB0337 /* SceneDelegate.m in Sources */,
+				5A25AE5023F6A78900FB0337 /* BettingOrderViewModel.m in Sources */,
+				5A25AE5323F6A79B00FB0337 /* BettingOrderModel.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

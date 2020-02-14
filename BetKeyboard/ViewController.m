@@ -7,6 +7,7 @@
 //
 
 #import "ViewController.h"
+#import "K8Keyboard.h"
 
 @interface ViewController ()
 
@@ -18,6 +19,13 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
 }
+
+- (IBAction)addBetingOrder:(id)sender {
+}
+
+- (IBAction)removeBettingOrder:(id)sender {
+}
+
 
 
 @end
