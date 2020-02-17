@@ -2,7 +2,6 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="15702" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" colorMatched="YES">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15704"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -136,7 +135,7 @@
                                     </connections>
                                 </button>
                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7bD-PC-QOA">
-                                    <rect key="frame" x="259" y="0.0" width="63.5" height="39"/>
+                                    <rect key="frame" x="259" y="0.0" width="64" height="39"/>
                                     <color key="backgroundColor" red="0.59999999999999998" green="0.59999999999999998" blue="0.59999999999999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                     <state key="normal" title="0">
                                         <color key="titleColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
@@ -146,7 +145,7 @@
                                     </connections>
                                 </button>
                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IQa-kR-QWI">
-                                    <rect key="frame" x="323.5" y="0.0" width="242.5" height="39"/>
+                                    <rect key="frame" x="324" y="0.0" width="242" height="39"/>
                                     <color key="backgroundColor" red="0.59999999999999998" green="0.59999999999999998" blue="0.59999999999999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                     <state key="normal" title="?">
                                         <color key="titleColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
@@ -158,9 +157,9 @@
                             </subviews>
                             <constraints>
                                 <constraint firstItem="cg1-6S-Ga0" firstAttribute="width" secondItem="GzL-SY-jEk" secondAttribute="width" id="Etg-jd-gvr"/>
-                                <constraint firstItem="cg1-6S-Ga0" firstAttribute="width" secondItem="BUY-Y4-y9I" secondAttribute="width" multiplier="1.00546" id="GQh-yr-BDH"/>
+                                <constraint firstItem="cg1-6S-Ga0" firstAttribute="width" secondItem="BUY-Y4-y9I" secondAttribute="width" id="GQh-yr-BDH"/>
                                 <constraint firstAttribute="height" constant="39" id="GU7-CN-Jzf"/>
-                                <constraint firstItem="cg1-6S-Ga0" firstAttribute="width" secondItem="69F-4B-1I7" secondAttribute="width" multiplier="1.00546" id="Zrs-Bc-Sxj"/>
+                                <constraint firstItem="cg1-6S-Ga0" firstAttribute="width" secondItem="69F-4B-1I7" secondAttribute="width" id="Zrs-Bc-Sxj"/>
                                 <constraint firstItem="cg1-6S-Ga0" firstAttribute="width" secondItem="IQa-kR-QWI" secondAttribute="width" multiplier="39:148" id="ufJ-tb-1Ec"/>
                                 <constraint firstItem="cg1-6S-Ga0" firstAttribute="width" secondItem="7bD-PC-QOA" secondAttribute="width" id="zXM-Cl-N9n"/>
                             </constraints>
@@ -168,10 +167,10 @@
                         <stackView opaque="NO" contentMode="scaleToFill" distribution="fillProportionally" spacing="1" translatesAutoresizingMaskIntoConstraints="NO" id="aTe-rr-UAL">
                             <rect key="frame" x="0.0" y="80" width="566" height="39"/>
                             <subviews>
-                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GoU-gz-jpN">
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GoU-gz-jpN">
                                     <rect key="frame" x="0.0" y="0.0" width="128.5" height="39"/>
                                     <color key="backgroundColor" red="0.59999999999999998" green="0.59999999999999998" blue="0.59999999999999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                    <state key="normal" title="*">
+                                    <state key="normal" image="BackSpace">
                                         <color key="titleColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                     </state>
                                     <connections>
@@ -241,4 +240,7 @@
             <point key="canvasLocation" x="227.536231884058" y="110.15625"/>
         </view>
     </objects>
+    <resources>
+        <image name="BackSpace" width="24" height="12"/>
+    </resources>
 </document>
