@@ -25,13 +25,13 @@ typedef NS_ENUM(NSInteger, ViewType) {
 @interface PopupOption : NSObject
 
 @property (nonatomic) ShapeType shapeType;
-@property (nonatomic) ViewType viewType;
+//@property (nonatomic) ViewType viewType;
 @property (nonatomic) CGFloat margin;
 @property (nonatomic) BOOL hasBlur;
 @property (nonatomic) BOOL canTapDismiss;
 
 -(instancetype)initWithShapeType:(ShapeType)shapeType
-                viewType:(ViewType)viewType
+//                viewType:(ViewType)viewType
                   margin:(CGFloat)margin
                  hasBlur:(BOOL)blur
            canTapDismiss:(BOOL)canTapDismiss;
@@ -43,13 +43,11 @@ typedef NS_ENUM(NSInteger, ViewType) {
 @property (strong, nonatomic) UIView *view;
 @property (nonatomic) CGFloat height;
 @property (nonatomic) CGFloat maxWidth;
-@property (nonatomic) CGSize landScapeSize;
 @property (strong, nonatomic) PopupOption * popupOption;
 
-- (void)initWithView:(UIView *)view
+- (instancetype)initWithView:(UIView *)view
               height:(CGFloat)height
             maxWidth:(CGFloat)maxWidth
-       landScapeSize:(CGSize)size
          popupOption:(PopupOption *)option;
 
 @end

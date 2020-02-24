@@ -8,7 +8,7 @@
 
 #import "BasePopupViewController.h"
 #import "PopupContainerView.h"
-#import "PopupItem.h"
+#import <ReactiveCocoa/ObjCRuntimeAliases.h>
 
 @interface BasePopupViewController ()
 
@@ -31,23 +31,67 @@
 
 - (void)viewDidAppear:(BOOL)animated {
     [super viewDidAppear:animated];
-    if (!_isShowedPopupView) {
-        self.isShowedPopupView = YES;
-        [self configureBlurSpaceView];
-    }
+    if (_isShowedPopupView) { return; }
+    
+    self.isShowedPopupView = YES;
+    [self configureBlurSpaceView];
+    [self makePopupViewWithItem:self.item];
+    [self showPopupView:0.3 Delay:0.0];
+    
 }
 
-- (void)makePopupViewWithItem: (PopupItem * _Nonnull)item {
-    CGFloat viewWidth = self.view.frame.size.width - item.popupOption.margin * 2;
-    CGFloat x = viewWidth > item.maxWidth ? (self.view.frame.size.width - item.maxWidth) / 2 : self.view.frame.origin.x + item.popupOption.margin;
+- (void)configurePopupItem : (PopupItem *) popItem {
+    if (_isShowedPopupView){ return; }
+    self.item = popItem;
+}
+
+- (void)makePopupViewWithItem: (PopupItem * _Nonnull)popupItem {
+    CGFloat viewWidth = self.view.frame.size.width - popupItem.popupOption.margin * 2;
+    CGFloat x = viewWidth > popupItem.maxWidth ? (self.view.frame.size.width - popupItem.maxWidth) / 2 : self.view.frame.origin.x + popupItem.popupOption.margin;
     CGFloat y = self.view.frame.size.height - [self safeAreaInsets].bottom;
+    CGFloat width = viewWidth > popupItem.maxWidth ? popupItem.maxWidth : viewWidth;
+    CGFloat height = popupItem.height + [self safeAreaInsets].bottom;
+    
+    self.item.view.frame = CGRectMake(x, y, width, height);
+    self.item = popupItem;
+//    [self convertShapeWithItem:popupItem];
+    [self.view addSubview:popupItem.view];
+}
+
+- (void)showPopupView: (NSTimeInterval)duration Delay:(CGFloat)delay {
+    __weak typeof(self) weakSelf = self;
+    
+    UIViewPropertyAnimator *animator = [[UIViewPropertyAnimator alloc] initWithDuration:duration curve:UIViewAnimationCurveLinear animations:^{
+        __strong typeof(self) strongSelf = weakSelf;
+        if (strongSelf && strongSelf.item) {
+            strongSelf.item.view.frame = [strongSelf updatePopupViewFrameWithItem:strongSelf.item];
+        }
+    }];
+    [animator startAnimation];
+}
+
+- (void)dismissPopupView: (NSTimeInterval)duration Delay:(CGFloat)delay {
+    __weak typeof(self) weakSelf = self;
+    
+    UIViewPropertyAnimator *animator = [[UIViewPropertyAnimator alloc] initWithDuration:duration curve:UIViewAnimationCurveLinear animations:^{
+        __strong typeof(self) strongSelf = weakSelf;
+        
+        if (strongSelf && strongSelf.item) {
+            strongSelf.view.backgroundColor = [UIColor clearColor];
+            CGFloat y = strongSelf.item.view.frame.origin.y;
+            strongSelf.item.view.frame = CGRectMake(CGRectGetMinX(strongSelf.view.frame), y - CGRectGetHeight(strongSelf.item.view.frame), CGRectGetWidth(strongSelf.item.view.frame), CGRectGetHeight(strongSelf.item.view.frame));
+        }
+    }];
+    [animator startAnimation];
+}
+
+- (CGRect) updatePopupViewFrameWithItem:(PopupItem *)item {
+    CGFloat viewWidth = self.view.frame.size.width - item.popupOption.margin *2;
+    CGFloat x = viewWidth > item.maxWidth ? (self.view.frame.size.width - item.maxWidth)/2 : self.view.frame.origin.x + item.popupOption.margin;
+    CGFloat y = self.view.frame.size.height - item.height - [self safeAreaInsets].bottom;
     CGFloat width = viewWidth > item.maxWidth ? item.maxWidth : viewWidth;
     CGFloat height = item.height + [self safeAreaInsets].bottom;
-    
-    self.item.view.frame = CGRectMake(x, -CGRectGetHeight(item.view.frame), width, height);
-    self.item = item;
-    [self convertShapeWithItem:item];
-    [self.view addSubview:item.view];
+    return CGRectMake(x, y, width, height);
 }
 
 - (void)convertShapeWithItem: (PopupItem *)item {
@@ -60,6 +104,30 @@
     topRoundedRect.layer.cornerRadius = 8;
     [maskView addSubview:topRoundedRect];
     self.item.view.maskView = maskView;
+}
+
+- (void) replacePopupViewWithItem:(PopupItem *)popItem {
+    if (!popItem) {
+        NSLog(@"popup item is empty.");
+        return;
+    }
+    
+    NSLog(@"Replace Popup view.");
+    [self.item.view removeFromSuperview];
+    popItem.view.frame = [self updatePopupViewFrameWithItem:popItem];
+    [self.view addSubview:popItem.view];
+    
+    self.item = popItem;
+    [self convertShapeWithItem:popItem];
+    
+    UIViewPropertyAnimator *animator = [[UIViewPropertyAnimator alloc] initWithDuration:0.3 curve:UIViewAnimationCurveLinear animations:^{
+        if ([self.item.view isKindOfClass:[PopupContainerView class]]) {
+            ((PopupContainerView *)popItem.view).alpha = 1.0;
+        }
+    }];
+    
+    [animator startAnimation];
+    
 }
 
 - (void)configureBlurSpaceView {

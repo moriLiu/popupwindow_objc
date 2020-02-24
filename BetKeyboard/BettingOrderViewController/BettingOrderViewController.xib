@@ -2,6 +2,7 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="15702" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
+        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15704"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -510,7 +511,7 @@
                 <constraint firstAttribute="trailing" secondItem="3tI-46-COK" secondAttribute="trailing" constant="11" id="cIr-MP-QQ7"/>
             </constraints>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
-            <point key="canvasLocation" x="222" y="265"/>
+            <point key="canvasLocation" x="160" y="234"/>
         </view>
         <view contentMode="scaleToFill" id="Bza-t4-Hys">
             <rect key="frame" x="0.0" y="0.0" width="414" height="47"/>
@@ -786,7 +787,7 @@
                 <constraint firstItem="Cyu-Fz-JDS" firstAttribute="leading" secondItem="3NQ-e8-lwR" secondAttribute="leading" id="qlc-mJ-UIY"/>
             </constraints>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
-            <point key="canvasLocation" x="191" y="406"/>
+            <point key="canvasLocation" x="100" y="76"/>
         </view>
         <view contentMode="scaleToFill" id="MBq-xc-LJj">
             <rect key="frame" x="0.0" y="0.0" width="167" height="54"/>
@@ -857,7 +858,7 @@
                 <constraint firstItem="Ifb-Fx-uM8" firstAttribute="top" secondItem="MBq-xc-LJj" secondAttribute="top" constant="6" id="ydl-7S-eM0"/>
             </constraints>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
-            <point key="canvasLocation" x="-222" y="402"/>
+            <point key="canvasLocation" x="40" y="-2"/>
         </view>
     </objects>
     <resources>

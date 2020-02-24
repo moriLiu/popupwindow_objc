@@ -17,9 +17,9 @@
 
 @implementation PopupWindowManager
 
-- (instancetype)init {
-    return [PopupWindowManager sharedInstance];
-}
+//- (instancetype)init {
+//    return [PopupWindowManager sharedInstance];
+//}
 
 +(instancetype)sharedInstance {
     
@@ -48,6 +48,7 @@
             self.containerWindow.backgroundColor = [UIColor clearColor];
             self.containerWindow.windowLevel = UIWindowLevelStatusBar +1;
             self.containerWindow.rootViewController = rootVC;
+            rootVC.view.backgroundColor = [UIColor clearColor];
             [self.containerWindow makeKeyAndVisible];
             
         }else{
@@ -64,11 +65,17 @@
 - (UIWindow *) keyWindow {
     UIWindow *keyWindow;
     if (@available(iOS 13.0 , *)) {
-        NSSet *windows = [UIApplication sharedApplication].connectedScenes;
+        NSSet *scenes = [UIApplication sharedApplication].connectedScenes;
         
-        for (UIWindow* window in windows) {
-            if (window.isKeyWindow) {
-                keyWindow = window;
+        for (UIWindowScene* scene in scenes) {
+            if (scene.activationState == UISceneActivationStateForegroundActive) {
+                
+                for (UIWindow *window in scene.windows) {
+                    if (window.keyWindow) {
+                        keyWindow = window;
+                    }
+                }
+                
                 break;
             }
         }

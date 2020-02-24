@@ -10,14 +10,14 @@
 @implementation PopupOption
 
 -(instancetype)initWithShapeType:(ShapeType)shapeType
-     viewType:(ViewType)viewType
+//     viewType:(ViewType)viewType
        margin:(CGFloat)margin
       hasBlur:(BOOL)blur
 canTapDismiss:(BOOL)canTapDismiss {
     
     if (self = [super init]) {
         self.shapeType = shapeType;
-        self.viewType = viewType;
+//        self.viewType = viewType;
         self.margin = margin;
         self.hasBlur = blur;
         self.canTapDismiss = canTapDismiss;
@@ -31,16 +31,18 @@ canTapDismiss:(BOOL)canTapDismiss {
 
 @implementation PopupItem
 
-- (void)initWithView:(UIView *)view
+- (instancetype)initWithView:(UIView *)view
        height:(CGFloat)height
      maxWidth:(CGFloat)maxWidth
-landScapeSize:(CGSize)size
   popupOption:(PopupOption *)option {
-    self.view = view;
-    self.height = height < 0 ? 0 : height;
-    self.maxWidth = maxWidth;
-    self.landScapeSize = size;
-    self.popupOption = option;
+    
+    if (self = [super init]) {
+        self.view = view;
+        self.height = height < 0 ? 0 : height;
+        self.maxWidth = maxWidth;
+        self.popupOption = option;
+    }
+    return self;
 }
 
 @end
