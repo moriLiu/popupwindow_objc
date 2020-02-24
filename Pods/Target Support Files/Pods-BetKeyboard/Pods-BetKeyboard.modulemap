@@ -1,0 +1,6 @@
+framework module Pods_BetKeyboard {
+  umbrella header "Pods-BetKeyboard-umbrella.h"
+
+  export *
+  module * { export * }
+}
