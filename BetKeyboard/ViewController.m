@@ -32,9 +32,11 @@
 }
 
 - (IBAction)addBetingOrder:(id)sender {
+    NSLog(@"用力注下去");
 }
 
 - (IBAction)removeBettingOrder:(id)sender {
+    NSLog(@"輕輕抽一點");
 }
 
 
