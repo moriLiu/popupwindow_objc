@@ -13,13 +13,19 @@
             </connections>
         </placeholder>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT" customClass="SingleBettingOrderView">
             <rect key="frame" x="0.0" y="0.0" width="414" height="118"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ONA-Cj-Vx5">
                     <rect key="frame" x="279" y="68" width="135" height="50"/>
                     <subviews>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="c8g-ET-Ylq">
+                            <rect key="frame" x="0.0" y="0.0" width="135" height="50"/>
+                            <connections>
+                                <action selector="bettingButtonPressed:" destination="-1" eventType="touchUpInside" id="8gV-2h-L2g"/>
+                            </connections>
+                        </button>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="投注" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6m3-PD-6NS">
                             <rect key="frame" x="51" y="6" width="33" height="19.5"/>
                             <fontDescription key="fontDescription" type="boldSystem" pointSize="16"/>
@@ -37,10 +43,14 @@
                     <constraints>
                         <constraint firstItem="DuM-Nh-uDM" firstAttribute="top" secondItem="6m3-PD-6NS" secondAttribute="bottom" constant="6" id="0yF-m9-Wlc"/>
                         <constraint firstItem="6m3-PD-6NS" firstAttribute="top" secondItem="ONA-Cj-Vx5" secondAttribute="top" constant="6" id="5v4-2B-UY0"/>
+                        <constraint firstAttribute="bottom" secondItem="c8g-ET-Ylq" secondAttribute="bottom" id="7WP-lQ-pxZ"/>
+                        <constraint firstItem="c8g-ET-Ylq" firstAttribute="top" secondItem="ONA-Cj-Vx5" secondAttribute="top" id="8nj-T6-Cne"/>
                         <constraint firstItem="DuM-Nh-uDM" firstAttribute="centerX" secondItem="ONA-Cj-Vx5" secondAttribute="centerX" id="CzM-ci-suK"/>
                         <constraint firstItem="6m3-PD-6NS" firstAttribute="centerX" secondItem="ONA-Cj-Vx5" secondAttribute="centerX" id="aia-vL-gRB"/>
+                        <constraint firstAttribute="trailing" secondItem="c8g-ET-Ylq" secondAttribute="trailing" id="fos-ll-KFC"/>
                         <constraint firstAttribute="height" constant="50" id="gh3-K0-mpG"/>
                         <constraint firstAttribute="width" constant="135" id="kwM-Jh-z7g"/>
+                        <constraint firstItem="c8g-ET-Ylq" firstAttribute="leading" secondItem="ONA-Cj-Vx5" secondAttribute="leading" id="w2E-Nx-yk8"/>
                     </constraints>
                 </view>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="JZE-dA-BBe">
@@ -93,6 +103,10 @@
                                 <constraint firstAttribute="height" constant="22" id="pwq-vZ-jhf"/>
                             </constraints>
                             <state key="normal" image="BettingOrderDelete"/>
+                            <connections>
+                                <action selector="close:" destination="-1" eventType="touchUpInside" id="Cp7-Xa-B2o"/>
+                                <action selector="pressTheButton:" destination="-1" eventType="touchUpInside" id="dOV-eV-Swh"/>
+                            </connections>
                         </button>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="(2-2) 皇家马德里 " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bBt-bW-2LA">
                             <rect key="frame" x="7" y="0.0" width="114.5" height="28"/>

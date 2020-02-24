@@ -18,4 +18,15 @@
 }
 */
 
+
+- (IBAction)close:(id)sender {
+    
+    NSLog(@"關閉單筆投注pop");
+    
+}
+
+- (IBAction)bettingButtonPressed:(id)sender {
+    NSLog(@"投注檢測");
+}
+
 @end

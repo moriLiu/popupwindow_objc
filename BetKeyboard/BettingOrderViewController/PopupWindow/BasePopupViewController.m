@@ -68,6 +68,16 @@
         }
     }];
     [animator startAnimation];
+    
+    UIViewPropertyAnimator *backgroundAnimator = [[UIViewPropertyAnimator alloc] initWithDuration:duration curve:UIViewAnimationCurveLinear animations:^{
+        __strong typeof(self) strongSelf = weakSelf;
+        if (strongSelf && strongSelf.item) {
+            [strongSelf addBlurWithPopItem:strongSelf.item];
+        }
+    }];
+    [backgroundAnimator startAnimation];
+    
+    
 }
 
 - (void)dismissPopupView: (NSTimeInterval)duration Delay:(CGFloat)delay {
@@ -118,6 +128,7 @@
     [self.view addSubview:popItem.view];
     
     self.item = popItem;
+    [self addBlurWithPopItem:popItem];
     [self convertShapeWithItem:popItem];
     
     UIViewPropertyAnimator *animator = [[UIViewPropertyAnimator alloc] initWithDuration:0.3 curve:UIViewAnimationCurveLinear animations:^{
@@ -135,6 +146,27 @@
     self.blurSpaceView.frame = CGRectMake(0, 0, CGRectGetWidth(self.view.frame), CGRectGetHeight(self.view.frame));
     self.blurSpaceView.backgroundColor = [UIColor clearColor];
     [self.view addSubview:self.blurSpaceView];
+}
+
+- (void)addBlurWithPopItem : (PopupItem *) popItem {
+    
+    if (popItem.popupOption.hasBlur) {
+        self.view.backgroundColor = [UIColor colorWithWhite:0.0 alpha:0.8];
+        
+        if ([self.view isKindOfClass:[PopupContainerView class]]) {
+            ((PopupContainerView *)self.view).isAbleToTouchLower = NO;
+            self.blurSpaceView.isAbleToTouchLower = NO;
+        }
+        
+    }else{
+        
+        self.view.backgroundColor = [UIColor clearColor];
+        if ([self.view isKindOfClass:[PopupContainerView class]]) {
+            ((PopupContainerView *)self.view).isAbleToTouchLower = YES;
+            self.blurSpaceView.isAbleToTouchLower = YES;
+
+        }
+    }
 }
 
 - (void)configurePopupContainerView {
